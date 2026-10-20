@@ -8,7 +8,7 @@ export function printExceptionLog(logMessage, error) {
   console.log(error);
 }
 
-export function errorResponse(message, status) {
+export function errorResponse(message, status = 400) {
   return NextResponse.json(
     {
       message: message,
@@ -20,9 +20,16 @@ export function errorResponse(message, status) {
   );
 }
 
-export function successResponse(jsonData, status) {
+export function successResponse(jsonData, status = 200) {
   return NextResponse.json(jsonData, {
     status: status,
+    headers: corsHeaders,
+  });
+}
+
+export function optionsResponse() {
+  return new NextResponse(null, {
+    status: 204,
     headers: corsHeaders,
   });
 }

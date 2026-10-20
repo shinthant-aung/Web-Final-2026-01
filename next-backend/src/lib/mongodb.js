@@ -23,3 +23,8 @@ export function getClientPromise() {
     return client.connect();
   }
 }
+
+export async function getDatabase(dbName = "wad_final") {
+  const client = await getClientPromise();
+  return client.db(process.env.MONGODB_DB || dbName);
+}
