@@ -6,6 +6,61 @@
 - **Student ID:** 6712097
 
 ---
+## Live Deployment (Vercel)
+
+- **Application:** [https://web-final-2026-01-frontend.vercel.app](https://web-final-2026-01-frontend.vercel.app)
+
+---
+## How to Run Locally
+
+### 1. Prerequisites
+- **Node.js** (v18 or higher)
+- **MongoDB** (MongoDB Atlas connection string)
+
+### 2. Backend Setup (`next-backend`)
+1. Open a terminal and navigate to the backend directory:
+   ```bash
+   cd next-backend
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Ensure `.env.local` is present with your MongoDB URI and JWT secret:
+   ```env
+   MONGODB_URI=your_mongodb_connection_uri
+   JWT_SECRET=your_jwt_secret_key
+   NODE_ENV=development
+   ```
+4. Start the backend development server:
+   ```bash
+   npm run dev
+   ```
+   The backend API will run at `http://localhost:3000`.
+
+### 3. Frontend Setup (`react-frontend`)
+1. Open a new terminal and navigate to the frontend directory:
+   ```bash
+   cd react-frontend
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Ensure `.env` is configured with the backend API URL:
+   ```env
+   VITE_API_URL=http://localhost:3000/api
+   ```
+4. Start the frontend development server:
+   ```bash
+   npm run dev
+   ```
+5. Open your browser and navigate to:
+   ```text
+   http://localhost:5173
+   ```
+
+---
 ## Test Credentials
 
 The system includes pre-configured test accounts for both **Teacher** and **Student** roles:
@@ -25,8 +80,7 @@ The system includes pre-configured test accounts for both **Teacher** and **Stud
 Follow these steps to verify all examination grading requirements:
 
 ### A. Authentication & Initial Redirect
-Notice that unauthenticated requests immediately redirect to the **Sign In** page (`/login`).
-
+Unauthenticated requests immediately redirect to the **Sign In** page (`/login`).
 ---
 
 ### B. Teacher Course Management
