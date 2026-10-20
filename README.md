@@ -70,9 +70,6 @@ The system includes pre-configured test accounts for both **Teacher** and **Stud
 
 ---
 ## Testing Walkthrough
-
-Follow these steps to verify all examination grading requirements:
-
 ### A. Authentication & Initial Redirect
 Unauthenticated requests immediately redirect to the **Sign In** page (`/login`).
 ---
