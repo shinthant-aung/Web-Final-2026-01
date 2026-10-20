@@ -1,11 +1,5 @@
 # Online Course Service - Final Examination
 
-## Student Information
-
-- **Student Name:** Shin Thant Aung
-- **Student ID:** 6712097
-
----
 ## Live Deployment (Vercel)
 
 - **Application:** [https://web-final-2026-01-frontend.vercel.app](https://web-final-2026-01-frontend.vercel.app)
