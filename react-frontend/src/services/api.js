@@ -1,6 +1,22 @@
 // src/services/api.js
 
-const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000/api";
+const isLocalhost =
+  typeof window !== "undefined" &&
+  (window.location.hostname === "localhost" ||
+    window.location.hostname === "127.0.0.1");
+
+let rawApiUrl =
+  import.meta.env.VITE_API_URL ||
+  (isLocalhost
+    ? "http://localhost:3000/api"
+    : "https://web-final-2026-01.vercel.app/api");
+
+rawApiUrl = rawApiUrl.trim().replace(/\/+$/, "");
+if (!rawApiUrl.endsWith("/api")) {
+  rawApiUrl += "/api";
+}
+
+const API_URL = rawApiUrl;
 
 export async function apiFetch(endpoint, options = {}) {
   const url = `${API_URL}${endpoint.startsWith("/") ? endpoint : `/${endpoint}`}`;
